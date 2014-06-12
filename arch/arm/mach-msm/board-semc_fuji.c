@@ -2388,7 +2388,7 @@ static struct msm_i2c_ssbi_platform_data msm_ssbi3_pdata = {
 #define MSM_FB_EXT_BUF_SIZE \
 		(roundup((720 * 576 * 2), 4096) * 2) /* 2 bpp x 2 pages */
 #else
-#define MSM_FB_EXT_BUF_SIZE	0
+#define MSM_FB_EXT_BUFT_SIZE	0
 #endif
 
 /* Note: must be multiple of 4096 */
@@ -2458,6 +2458,9 @@ unsigned char hdmi_is_primary;
 #define SECURE_BASE	(MSM_MM_FW_BASE)
 #define SECURE_SIZE	(MSM_ION_MM_SIZE + MSM_MM_FW_SIZE)
 #endif
+
+//#define MSM_ION_SF_SIZE                0x7000000 /* 112MB */
+//#define MSM_ION_CAMERA_SIZE     0x5000000 /*80MB*/
 
 #define MSM_ION_SF_SIZE         0x5000000 /* 80MB */
 #define MSM_ION_CAMERA_SIZE     0x4C00000 /*64MB*/
@@ -4973,7 +4976,11 @@ static struct pm8xxx_vibrator_platform_data pm8058_vib_pdata = {
 };
 
 static struct pm8xxx_rtc_platform_data pm8058_rtc_pdata = {
-  	.rtc_write_enable       = true,
+#ifdef CONFIG_RTC_SEMC_ETS
+	.rtc_write_enable       = true,
+#else
+  	.rtc_write_enable       = false,
+#endif
 	.rtc_alarm_powerup	= false,
 };
 
