@@ -4973,11 +4973,7 @@ static struct pm8xxx_vibrator_platform_data pm8058_vib_pdata = {
 };
 
 static struct pm8xxx_rtc_platform_data pm8058_rtc_pdata = {
-#ifdef CONFIG_RTC_SEMC_ETS
-	.rtc_write_enable       = true,
-#else
-  	.rtc_write_enable       = false,
-#endif
+  	.rtc_write_enable       = true,
 	.rtc_alarm_powerup	= false,
 };
 
