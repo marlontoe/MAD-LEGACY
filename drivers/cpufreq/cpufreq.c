@@ -1825,9 +1825,8 @@ static int __cpufreq_set_policy(struct cpufreq_policy *data,
 				struct cpufreq_policy *policy)
 {
 	int ret = 0;
-	struct cpufreq_policy *cpu0_policy = NULL;
-
 	struct cpufreq_policy *cpu0_policy;
+
 	if(data->cpu >= 1){
 		pr_debug("forcing cpu0 policy on cpu\n");
 		cpu0_policy = cpufreq_cpu_get(0); // force cpu1 to follow policy of cpu0
