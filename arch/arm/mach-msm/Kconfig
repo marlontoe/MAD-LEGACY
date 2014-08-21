@@ -1215,12 +1215,6 @@ config MSM_SUSPEND_STATS_FIRST_BUCKET
 
 endif # MSM_IDLE_STATS
 
-config INTELLI_PLUG
-	bool "Enable intelli-plug cpu hotplug driver"
-	default n
-	help
-	Generic Intelli-plug cpu hotplug driver for ARM SOCs
-
 config CPU_HAS_L2_PMU
 	bool "L2CC PMU Support"
 	help
