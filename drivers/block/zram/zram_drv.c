@@ -999,6 +999,9 @@ static int __init zram_init(void)
 {
 	int ret, dev_id;
 
+	// initialize with default of 2 zRam devices
+	num_devices = 2;
+
 	if (num_devices > max_num_devices) {
 		pr_warn("Invalid value for num_devices: %u\n",
 				num_devices);
