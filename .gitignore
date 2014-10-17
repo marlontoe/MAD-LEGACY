@@ -86,6 +86,18 @@ arch/arm/boot/compressed/piggy.xzkern
 arch/arm/boot/Image
 arch/arm/boot/zImage
 
+# compiled files
+arch/arm/boot/Image
+arch/arm/boot/compressed/lib1funcs.S
+arch/arm/boot/compressed/vmlinux
+arch/arm/boot/compressed/vmlinux.lds
+arch/arm/boot/zImage
+arch/arm/kernel/vmlinux.lds
+output/
+arch/arm/boot/compressed/piggy.gzip
+
 *.orig
 *~
 \#*#
+
+1032
